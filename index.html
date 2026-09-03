@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliveryApp - Приложение доставки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="navbar">
+            <div class="logo">🚚 DeliveryApp</div>
+            <div class="nav-links">
+                <button class="nav-btn active" onclick="switchTab('orders')">Заказы</button>
+                <button class="nav-btn" onclick="switchTab('restaurants')">Рестораны</button>
+                <button class="nav-btn" onclick="switchTab('cart')">Корзина</button>
+                <button class="nav-btn" onclick="switchTab('profile')">Профиль</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Вкладка Заказы -->
+            <section id="orders" class="tab-content active">
+                <h2>Текущие заказы</h2>
+                <div id="orders-list" class="orders-grid">
+                    <!-- Заказы будут добавлены здесь -->
+                </div>
+            </section>
+
+            <!-- Вкладка Рестораны -->
+            <section id="restaurants" class="tab-content">
+                <h2>Доступные рестораны</h2>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Поиск ресторана..." onkeyup="filterRestaurants()">
+                </div>
+                <div id="restaurants-list" class="restaurants-grid">
+                    <!-- Рестораны будут добавлены здесь -->
+                </div>
+            </section>
+
+            <!-- Вкладка Корзина -->
+            <section id="cart" class="tab-content">
+                <h2>Ваша корзина</h2>
+                <div id="cart-items" class="cart-items">
+                    <!-- Товары в корзине будут добавлены здесь -->
+                </div>
+                <div class="cart-summary">
+                    <h3>Итого: <span id="cart-total">0₽</span></h3>
+                    <button class="btn-primary" onclick="checkout()">Оформить заказ</button>
+                </div>
+            </section>
+
+            <!-- Вкладка Профиль -->
+            <section id="profile" class="tab-content">
+                <h2>Мой профиль</h2>
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <h3 id="user-name">Иван Петров</h3>
+                        <p>📞 <span id="user-phone">+7 (999) 123-45-67</span></p>
+                        <p>📍 <span id="user-address">ул. Примерная, 10</span></p>
+                    </div>
+                    <button class="btn-secondary" onclick="editProfile()">Редактировать</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
